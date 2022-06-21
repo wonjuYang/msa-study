@@ -1,0 +1,25 @@
+server:
+  port: 8888
+spring:
+  security:
+    user:
+      name: admin
+      password: asdf1234
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations:
+            - classpath:baseservice/
+            - classpath:socialservice/
+            - classpath:eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
