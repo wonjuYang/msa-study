@@ -23,7 +23,7 @@ public class FollowRestRepository {
 			idStr = idStr.length() > 0 ? idStr.append(",").append(id) : idStr.append(id);
 		}
 		
-		FollowResponseDto response = restTemplate.getForEntity("http://localhost:8081/followee?userId={userId}&userIds={userIds}", 
+		FollowResponseDto response = restTemplate.getForEntity("http://socialservice/followee?userId={userId}&userIds={userIds}",
 				FollowResponseDto.class, userId, idStr.toString()).getBody();
 		
 		List<FollowData> followDataList = response.getData();
