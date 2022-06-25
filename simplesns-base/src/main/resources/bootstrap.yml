@@ -9,3 +9,13 @@ spring:
       username: admin
       password: asdf1234
 
+hystrix:
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 50000
+  command.default.circuitBreaker.errorThresholdPercentage: 10000
+  command.default.circuitBreaker.requestVolumeThreshold: 300000
+  command.feed.execution.isolation.thread.timeoutInMilliseconds: 100000
+  command.feed.circuitBreaker.errorThresholdPercentage: 10000
+  command.feed.circuitBreaker.requestVolumeThreshold: 3000000
+  command.follow.execution.isolation.thread.timeoutInMilliseconds: 500000
+  command.follow.circuitBreaker.errorThresholdPercentage: 100000
+  command.follow.circuitBreaker.requestVolumeThreshold: 500000
