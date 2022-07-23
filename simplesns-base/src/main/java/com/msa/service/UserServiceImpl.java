@@ -58,8 +58,8 @@ public class UserServiceImpl implements UserService {
 	public List<User> getUserListWithFollowInfo(Long userId, List<Long> userIdList) {
 		List<User> userList = userRepository.findByIdIn(userIdList);
 		
-		// List<Follow> followList = followService.getFolloweeList(userId, userIdList);
-		List<Follow> followList = followRestRepository.getFolloweeList(userId, userIdList);
+		List<Follow> followList = followService.getFolloweeList(userId, userIdList);
+		//List<Follow> followList = followRestRepository.getFolloweeList(userId, userIdList);
 		
 		List<Long> followeeIdList = followList.stream().map(f -> f.getFolloweeId()).collect(Collectors.toList());
 		

@@ -57,10 +57,10 @@ public class PostServiceImpl implements PostService {
 		}
 
 		// bad dependency
-		Optional<User> userResult = userRepository.findById(id);
+		Optional<User> userResult = userRepository.findById(post.getUserId());
 
-		User user = null;
-		if(result.isPresent()) {
+		User user = new User("1234", "12");
+		if(userResult.isPresent()) {
 			user = userResult.get();
 		}
 		post.setUser(user);

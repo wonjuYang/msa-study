@@ -1,6 +1,7 @@
 package com.msa.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,8 @@ public class FeedServiceImpl implements FeedService {
 		feedRepository.save(feed);
 		
 		List<Follow> followList = followService.getFollowerList(followeeId);
+
+
 		
 		List<Feed> feedList = new ArrayList<Feed>();
 		for(Follow follow : followList) {
